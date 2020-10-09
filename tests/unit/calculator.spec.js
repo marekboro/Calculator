@@ -40,4 +40,36 @@ describe('App.vue', () => {
     expect(wrapper.vm.runningTotal).to.equal(3)
   })
 
+  it('can concatenate button clicks 3 4 5 to display 345', () => {
+    wrapper.vm.previousTotal = 0;
+    wrapper.vm.numberClick('3');
+    wrapper.vm.numberClick('4');
+    wrapper.vm.numberClick('5');
+    expect(wrapper.vm.runningTotal).to.equal(345)
+  })
+  it('can chain multiple operations together: 3 * 5 + 7 / 11 giving 2', () => {
+    wrapper.vm.previousTotal = 0;
+    wrapper.vm.numberClick('3');
+    wrapper.vm.operatorClick("*");
+    wrapper.vm.numberClick('5');
+    wrapper.vm.operatorClick("+");
+    wrapper.vm.numberClick('7');
+    wrapper.vm.operatorClick("/");
+    wrapper.vm.numberClick('1');
+    wrapper.vm.numberClick('1');
+    wrapper.vm.operatorClick("=");
+    expect(wrapper.vm.runningTotal).to.equal(2)
+  })
+
+  it('can cclear the running total without affecting the calculation', () => {
+    wrapper.vm.previousTotal = 0;
+    wrapper.vm.numberClick('3');
+    wrapper.vm.operatorClick("*");
+    wrapper.vm.numberClick('5');
+    wrapper.vm.clearClick();
+    wrapper.vm.numberClick('7');
+    wrapper.vm.operatorClick("=");
+    expect(wrapper.vm.runningTotal).to.equal(21)
+  })
+
 })
