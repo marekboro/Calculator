@@ -15,7 +15,8 @@
 - [x] Do the arithmetical operations update the display with the result of the operation?
 - [x] Can multiple operations be chained together?
 - [x] Is the output as expected for a range of numbers (for example, positive, negative, decimals and very large numbers)?
-- [x] What does the code do in exceptional circumstances? Specifically, if you divide by zero, what is the effect? Write a test to describe what you'd prefer to happen, and then correct - - [ ] the code to make that test pass (you will need to modify the Calculator model to meet this requirement).
+- [x] What does the code do in exceptional circumstances? Specifically, if you divide by zero, what is the effect? Write a test to describe what you'd prefer to happen, and then 
+- [x] correct the code to make that test pass (you will need to modify the Calculator model to meet this requirement).
 
 ## Project setup
 ```
